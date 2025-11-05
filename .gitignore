@@ -1,0 +1,3 @@
+*.unsigned.mobileconfig
+*.mobileconfig
+.DS_Store
