@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>PayloadDisplayName</key>
+	<string>WireGuard Configuration Profile</string>
+	<key>PayloadType</key>
+	<string>Configuration</string>
+	<key>PayloadVersion</key>
+	<integer>1</integer>
+	<key>PayloadIdentifier</key>
+	<string>${ORG}.${TOP_ID_UUID}</string>
+	<key>PayloadUUID</key>
+	<string>${TOP_UUID}</string>
+	<key>PayloadContent</key>
+	<array>
+		<dict>
+			<key>PayloadDisplayName</key>
+			<string>VPN</string>
+			<key>PayloadType</key>
+			<string>com.apple.vpn.managed</string>
+			<key>PayloadVersion</key>
+			<integer>1</integer>
+			<key>PayloadIdentifier</key>
+			<string>com.wireguard.macos.${VPN_ID_UUID}</string>
+			<key>PayloadUUID</key>
+			<string>${PAYLOAD_UUID}</string>
+			<key>UserDefinedName</key>
+			<string>${PROFILE_NAME}</string>
+			<key>VPNType</key>
+			<string>VPN</string>
+			<key>VPNSubType</key>
+			<string>com.wireguard.macos</string>
+			<key>VendorConfig</key>
+			<dict>
+				<key>WgQuickConfig</key>
+				<string>
+          ${ESCAPED_CONF}
+				</string>
+			</dict>
+			<key>VPN</key>
+			<dict>
+				<key>RemoteAddress</key>
+				<string>${ENDPOINT}</string>
+				<key>AuthenticationMethod</key>
+				<string>Password</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>
